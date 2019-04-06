@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+body {
+
+background-image: url('../assets/images/bg.jpg');
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+
+}
+
+span {
+    color: #54BA61;
+}
+
+h1 {
+    margin: 0px auto 30px auto;
+    font-size: 1.5rem;
+    color: #1999c0;
+    font-family: 'Audiowide', cursive;
+    font-weight: normal;
+
+}
+
+.main-container {
+    text-align: center;
+    margin: 10px auto 50px auto;
+    background-color: rgba(255, 255, 255,0.1);
+    width: 360px;
+    padding: 10px 0px;
+    border-radius: 20px;
+}
+
+.description-input, .amount-input {
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50px;
+    border-style: none;
+    font-size: 0.7rem;
+    background-color: #f3f3f3;
+    display: block;
+    margin:5px auto;
+}
+
+
+input, button, select:focus {
+    outline: none;
+}
+
+button {
+    width:130px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: #1999c0;
+    color: #fff;
+    border:none;
+    margin: 8px;   
+    transition: 90ms ease; 
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #32b9e2;
+    transition: 210ms ease;
+}
+
+select {
+    width: 10vw;
+    height: 50px;
+    font-size: 1rem;
+    display: block;
+    justify-self: end;
+    border-radius: 10px;
+}
+
+.balance {
+    width: 100%;
+    background-color: #010103;
+    color: #fff;
+    padding: 20px;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    border-top: 2px solid #1999c0;
+    border-bottom: 2px solid #1999c0;
+}
+
+.balance-container {
+    width: 100%;
+    margin: auto;
+}
+
+
+
+.transaction {
+    display: grid;
+    width: 70%;
+    align-items: center;
+    font-size: 0.7rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 8px 10px;
+    margin:4px auto;
+    background-color: #010103;
+    color: #fff;
+    border-radius: 50px;
+}
+
+
+
+.positive {
+    background-color: #54BA61;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.negative {
+    background-color: #010103;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+
+
+
+.interface-container {
+   
+    margin:auto;
+}
+
+p {
+
+font-size: 0.7rem;
+color: #fff;
+margin: 20px auto 5px auto;
+
+}
+
+.onoffswitch {
+    position: relative; width: 87px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    margin: 0px auto 6px auto;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border-radius: 50px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 22px; padding: 0; line-height: 22px;
+    font-size: 0.7rem; color: white;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "INCOME";
+    padding-left: 5px;
+    background-color: #54BA61; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "EXPENSE";
+    padding-right: 5px;
+    background-color: #C23E3E; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 10px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 61px;
+    border: 2px solid #FFFFFF; border-radius: 50px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.clear-button {
+    width: 60px;
+    height: 16px;
+    border-radius: 50px;
+    border:none;
+    line-height: 16px;
+    text-transform: uppercase;
+   
+}
+
