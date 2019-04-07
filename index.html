@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Money Tracker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/style.css">
@@ -17,28 +17,41 @@
             <img src="assets/images/money.svg">
             <h1>MONEY TRACKER</h1>
             <p>Create new transaction:</p>
+            
             <div class="interface-container">
+                
                 <input type="text" class="description-input" placeholder="Enter description">
                 <input type="number" class="amount-input" placeholder="Enter amount">
+                
                 <div class="switch-container">  
+                    
                     <p>Toggle between INCOME / EXPENSE:</p>
+                    
                     <div class="onoffswitch">
+                        
                         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
                         <label class="onoffswitch-label" for="myonoffswitch">
                             <span class="onoffswitch-inner"></span>
                             <span class="onoffswitch-switch"></span>
                         </label>
                     </div>
+
                 </div>
+
                 <button>ADD</button>
             </div>
+
             <div class="acc-overview">
+
                 <div class="balance-container">
                     <h1>Account Balance: </h1>
                 </div>
             </div>
+
             <button class="clear-button">Clear</button>
         </div>
+
         <script src="./js/script.js" async defer></script>
+        
     </body>
 </html>

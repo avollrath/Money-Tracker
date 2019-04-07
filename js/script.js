@@ -13,7 +13,7 @@ function arrayToStorage(arr) {
 
 function getFromStorage() {
  
-    if (localStorage.getItem('transaction') === null) transactions = [['Sold House', 210099, '22/05/1988'],['Sold Car', 7360, '28/11/1985'], ['Taxes', -4821, '31/12/1999'], ['Bought Yacht', -19000, '01/06/2000']];
+    if (localStorage.getItem('transactions') === null) transactions = [['Sold House', 210099, '22/05/1988'],['Sold Car', 7360, '28/11/1985'], ['Taxes', -4821, '31/12/1999'], ['Bought Yacht', -19000, '01/06/2000']];
     else transactions = JSON.parse(localStorage.getItem('transactions'))
     
 }
