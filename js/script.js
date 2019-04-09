@@ -30,11 +30,12 @@ function createTransaction() {
     transactions.push(transaction);
     arrayToStorage(transactions);
     }
-    else alert('Please enter a description and a amount!');
+    else alert('Please enter a description and an amount!');
 }
 
 getFromStorage();
 renderTransactions(transactions);
+deleteTransaction();
 
 function renderTransactions(transactions) {
 
@@ -43,24 +44,28 @@ function renderTransactions(transactions) {
     balanceInfo.className = 'balance';
     balanceInfo.innerHTML = 'Account Balance: <span>' + (calcBalance()).toLocaleString() + '<span> €';
     document.querySelector('.balance-container').appendChild(balanceInfo);
-    transactions.forEach(function(transaction) {
+    transactions.forEach(function(transaction,index) {
         let transactionBox = document.createElement('div');
         transactionBox.className = 'transaction';
+        transactionBox.id = index;
         if (transaction[1] > 0) {
             transactionBox.innerHTML = `
             <div class="trans-description">${transaction[0]}</div>
             <div class="trans-date">${transaction[2]}</div>
-            <div class="trans-amount positive">${transaction[1].toLocaleString()} €</div>`;
+            <div class="trans-amount positive">${transaction[1].toLocaleString()} €</div>
+            <i class="far fa-trash-alt delete-icon"></i>`;
 
         }
         else {
         transactionBox.innerHTML = `
                                     <div class="trans-description">${transaction[0]}</div>
                                     <div class="trans-date">${transaction[2]}</div>
-                                    <div class="trans-amount negative">${transaction[1].toLocaleString()} €</div>`};
+                                    <div class="trans-amount negative">${transaction[1].toLocaleString()} €</div>
+                                    <i class="far fa-trash-alt delete-icon"></i>`};
         document.querySelector('.balance-container').appendChild(transactionBox);
-
+      
     })
+    deleteTransaction();
 }
 
 function currentDate() {
@@ -96,3 +101,23 @@ function clearStorage() {
 clearBtn.addEventListener('click', e => {
     clearStorage();
 })
+
+
+function deleteTransaction() {
+    let deleteIcon = document.querySelectorAll('.delete-icon');
+    if (deleteIcon) {
+    deleteIcon.forEach(function(el){
+    el.addEventListener('click', e => {
+    deleteElementFromArray(transactions, e.currentTarget.parentNode.id);
+    getFromStorage();
+    renderTransactions(transactions);
+    });
+    });
+    }
+}
+    
+function deleteElementFromArray(arr, index) {
+arr.splice(index, 1);
+arrayToStorage(arr);
+
+}
